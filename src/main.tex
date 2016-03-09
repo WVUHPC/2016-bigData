@@ -1,0 +1,55 @@
+\documentclass{beamer}
+
+\mode{presentation}
+
+\title{Not sure yet}
+
+\author{Michael Carlise}
+\date[ISPN '80]{ARES 2016}
+
+\begin{document}
+
+% titlepage
+\input{divisions/titlepage}
+
+% what is bigdata
+\input{divisions/bigdata}
+
+% CPU as a bottleneck
+\input{divisions/cpu/definition}
+
+% data dimensions and algorithm complexity correlation
+\input{divisions/cpu/dimensions}
+
+% example problem
+\input{divisions/cpu/example}
+
+% compute time
+\input{divisions/cpu/compute-time}
+
+% caveat
+\input{divisions/cpu/caveats}
+
+% Large Memory
+\input{divisions/ram/definition}
+
+% Solution 1: data streaming
+\input{divisions/ram/stream}
+
+% stream examples - ram footprint
+\input{divisions/ram/stream-examples}
+
+% Solution 2: MPI
+\input{divisions/ram/mpi}
+
+\input{divisions/ram/mpi-examples}
+
+\input{divisions/ram/caveats}
+
+% Infrastructure and language implementation limits
+\input{divisions/infrastructure/limits}
+
+\input{divisions/online}
+
+\end{document}
+

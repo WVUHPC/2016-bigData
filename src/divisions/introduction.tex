@@ -1,0 +1,70 @@
+
+
+\section{Introduction}
+
+\begin{frame}
+		% Big data has different meanings to different people.  Before any
+		% discussion about solving problems reached with "Big Data", we need to
+		% define what we are talking.  
+		
+		Data sets that require unique solutions to analyze, share or store are
+		consider Big Data
+
+		% What does this mean?  In practice, we experience this when we run a
+		% data set through a known workflow or utility, and it fails to
+		% work.  It either takes too long to complete (months or years) or
+		% crashes due to RAM consumption (computer freezes, maybe?).
+		% Additionally, some data sets are so large they can't even fit on the
+		% storage of your workstation or lab server.  While there are a lot of
+		% different challenges that can be presented with Big Data, including
+		% generating/collecting, annotating, appropriate statistical methods,
+		% etc... Here we are going to specifically deal with general computing
+		% approaches to overcome computing time, large memory usage (RAM),
+		% and large storage size.
+\end{frame}
+
+\begin{frame}
+		% There are three specific metrics that center around data analysis
+		% execution or storing/transfering data sets.
+
+		\begin{itemize}
+				\item Execution time of analysis
+				\item RAM usage
+				\item Raw Data Size
+		\end{itemize}
+
+		% Execution time of analysis is the measure of real time it takes to
+		% complete the task at hand.  Generally speaking, you can add mutliple
+		% steps together, but when identifying steps to target for improvement,
+		% you want specify exact steps.  For instance, if you have a workflow
+		% that takes 5 steps to run;  together amounting to 6 months of
+		% execution time.  But, step 3 consumes 5 months and 3 weeks - then
+		% your obvious concern is to reduce the execution time of step 3.  
+		%
+		% An additional concern is how much RAM your analysis is using.  If you
+		% are loading a 40GB data set into memory on a computer that is bound
+		% to 16GB of RAM - you are going to freeze the computer.  
+		%
+		% With both of these metrics the goal is the reduce the number, either
+		% the time is takes to complete the task and/or reduce the amount of
+		% RAM used.  Some applications only need a reduction of one or the
+		% other, while some will need to apply techniques to reduce both.
+		% Additionally, some times it's impossible to reduce either.  There are
+		% still approaches that can be leverage to reduce any bottlenecks.
+		%
+		% Lastly, some data sets are so large - they can't fit on workstations
+		% or laptops.  They can approach the order of hundreds or even
+		% thousands of gigabytes.  These datasets require unique computing
+		% infrastructure to compute on.  We will finish our discussion of big
+		% Data about where to find these infrastructures and how to gain
+		% usually free access to them.
+		%
+		% Solutions that will be shown for different bottlenecks will be
+		% algorithm agnostic.  We recognize that almost all scientific work
+		% does not have a large freedome of choice with algorithms.  This is
+		% not to say that numerous algorithms do not always exist for the given
+		% problem.  But a large number of scientific programs are not
+		% implemented with varying alorithms.  So with each approach, we assume
+		% that you do not have the freedom to choose a different program
+		% and/or heavily modify self-written scripts.
+\end{frame}

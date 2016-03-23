@@ -1,5 +1,8 @@
 
-.. toctree:
+Distributed Computing
+=====================
+
+.. toctree::
     :maxdepth: 2
 
     diagram

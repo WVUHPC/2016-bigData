@@ -1,0 +1,3 @@
+
+Amdahl's law
+===

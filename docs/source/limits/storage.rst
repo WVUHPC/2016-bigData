@@ -1,3 +1,0 @@
-
-Storing, modifying, and transfering
-====

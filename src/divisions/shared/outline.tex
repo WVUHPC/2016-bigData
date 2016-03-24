@@ -1,14 +1,30 @@
 
 \begin{frame}
-		for loop diagram
+		\begin{figure}
+				\includegraphics[width=0.8\linewidth]{figures/diagrams/forloop/fordiagram}
+		\end{figure}	
+\end{frame}
+
+\begin{frame}
+		\begin{figure}
+				\includegraphics[width=0.8\linewidth]{figures/diagrams/forloop/fordiagram2}
+		\end{figure}	
 \end{frame}
 
 \begin{frame}
 		CLI examples of parallel utilities
 \end{frame}
 
-\begin{frame}
-		parallel R for loop (code)
+
+\begin{frame}[fragile]
+		\frametitle{R parallel package}
+		\center
+		\begin{verbatim}
+			library(doParallel)
+			cl <- makeCluster(2)
+			registerDoParallel(cl)
+			foreach(i=1:3) %dopar% sqrt(i)
+		\end{verbatim}
 \end{frame}
 
 \begin{frame}

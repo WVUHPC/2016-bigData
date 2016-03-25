@@ -1,15 +1,30 @@
 \begin{frame}
-		coreutils
+		\frametitle{Algorithm Efficiency}
+		Table of core utilities
 \end{frame}
 
 \begin{frame}
-		tabular R (code)
+		\frametitle{Algorithm Efficiency}
+		\begin{figure}
+		\includegraphics[width=0.5\linewidth]{figures/diagrams/tabular/tabularRcode}
+		\end{figure}
 \end{frame}
 
 \begin{frame}
-		modified tabular R (code)
+		\frametitle{Algorithm Efficiency}
+		How long it takes to run this code, and results.
+\end{frame}
+
+\begin{frame}[fragile]
+		\frametitle{Algorithm Efficiency}
+		\begin{verbatim}
+		cat VS09MORT.DUSMCPUB | cut -b 69 | 
+		awk '{ if ( $1=="F" ) s = s + 1 } 
+		        END { print s, NR-s }'
+		\end{verbatim}
 \end{frame}
 
 \begin{frame}
-		tabular speed and memory setup (figure)
+		\frametitle{Algorithm Efficiency}
+		\Huge{\centerline{5.679 seconds!}}
 \end{frame}

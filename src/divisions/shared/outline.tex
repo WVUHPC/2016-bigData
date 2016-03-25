@@ -32,10 +32,39 @@
 \end{frame}
 
 \begin{frame}
-		Amdahl's law (code diagram)
+		\frametitle{Amdahl's law}
+		\begin{figure}
+				\includegraphics[width=0.4\linewidth]{figures/diagrams/amdahl/code}
+		\end{figure}
 \end{frame}
 
 \begin{frame}
-		Parallelization overhead (code diagram)
+		\frametitle{Amdahl's law}
+		\begin{figure}
+				\includegraphics[width=0.4\linewidth]{figures/diagrams/amdahl/parallelblocks}
+		\end{figure}
+\end{frame}
+
+\begin{frame}
+		\frametitle{Amdahl's law}
+		72 total lines of code \newline
+		24 parallelizable lines of code\newline
+
+		\color{red}34\% highest possible reduction of time!
+\end{frame}
+
+\begin{frame}
+		\frametitle{Parallel Overhead}
+		\begin{figure}
+				\includegraphics[width=0.4\linewidth]{figures/diagrams/amdahl/overhead}
+		\end{figure}
+\end{frame}
+
+\begin{frame}
+		\frametitle{Parallel Overhead}
+		\sout{34\% highest possible reduction of time!}\newline
+
+		\color{red}Due to parallelization overhead, theorectical limit isn't
+even possible.
 \end{frame}
 

@@ -1,9 +1,8 @@
 
-MPI Sort
-===============
-
-.. image:: ../../../images/diagrams/splitmem/memsplit.png
-
-.. image:: ../../../images/diagrams/sort/serialsort.png
+Distributed Sort
+==================
 
 .. image:: ../../../images/diagrams/sort/parallelsort.png
+
+.. image:: ../../../images/diagrams/sort/distributedsort.png
+

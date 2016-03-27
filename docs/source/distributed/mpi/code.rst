@@ -1,5 +1,5 @@
 
-MPI code examples
+MPI code
 ==================
 
 A simple pbdMPI code example::

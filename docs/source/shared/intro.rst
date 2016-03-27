@@ -1,7 +1,4 @@
 
-Reducing compute time when memory usage is low
-==============================================
-
 
 .. toctree::
     :maxdepth: 2

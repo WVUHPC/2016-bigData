@@ -1,5 +1,5 @@
 
-Parallel Code Examples
+Parallel Code
 =======================
 
 ::

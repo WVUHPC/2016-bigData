@@ -1,5 +1,5 @@
 
-Measuring limitations of Data Sets
+Limitations
 ==================================
 
 "Albert Einstein quote"

@@ -1,5 +1,5 @@
 
-Shared Parallel Overhead
+Parallel Overhead
 =========================
 
 .. image:: ../../images/diagrams/amdahl/overhead.png

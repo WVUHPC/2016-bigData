@@ -1,3 +1,3 @@
 
-Infrastructure limits
+Infrastructure
 ========================

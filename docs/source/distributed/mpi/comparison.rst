@@ -1,3 +1,3 @@
 
-Comparing Shared to Distributed Computing
+Comparison
 ==========================================

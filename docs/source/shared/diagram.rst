@@ -1,7 +1,7 @@
 
-For loop diagram
+Parallel Computing
 ====================
 
-.. image:: ../../images/diagrams/forloop/fordiagram.png
+.. image:: ../../images/diagrams/sort/serialsort.png
 
-.. image:: ../../images/diagrams/forloop/fordiagram2.png
+.. image:: ../../images/diagrams/sort/parallelsort.png

@@ -14,13 +14,16 @@
 \end{frame}
 
 \begin{frame}
-		CLI examples of parallel utilities
+		\frametitle{Parallel CLI}
+		abyss-pe np=8\newline
+		bowtie2 -p 8\newline
+		namd +p 12 +ppn 3\newline
+		sort --parallel=8\newline
 \end{frame}
 
 
 \begin{frame}[fragile]
-		\frametitle{R parallel package}
-		\center
+		\frametitle{Parallel Code}
 		\begin{verbatim}
 			library(doParallel)
 			cl <- makeCluster(2)
@@ -30,8 +33,17 @@
 \end{frame}
 
 \begin{frame}
-		observed/expected speedup (figure)
+		\frametitle{Observed Speedup}
+		\begin{figure}
+				\includegraphics[width=0.7\linewidth]{figures/diagrams/omp/reduction}
+		\end{figure}
 \end{frame}
+
+\begin{frame}
+		\frametitle{Observed Speedup}
+		We observed 92\% speedup.
+\end{frame}
+
 
 \begin{frame}
 		\frametitle{Amdahl's law}
@@ -49,10 +61,13 @@
 
 \begin{frame}
 		\frametitle{Amdahl's law}
-		72 total lines of code \newline
-		24 parallelizable lines of code\newline
+		72 total lines of code 
 
-		\color{red}34\% highest possible reduction of time!
+		24 parallelizable lines of code
+
+
+		\color{red}Parallel computing will only reduce time spent computing
+		34\% of the total application.
 \end{frame}
 
 \begin{frame}
@@ -64,7 +79,7 @@
 
 \begin{frame}
 		\frametitle{Parallel Overhead}
-		\sout{34\% highest possible reduction of time!}\newline
+		\sout{Reduce time spent on 34\% of application!}\newline
 
 		\color{red}Due to parallelization overhead, theorectical limit isn't
 even possible.

@@ -8,7 +8,7 @@ Table of Contents
 
    Introduction<intro>
    What is "big Data"<bigdata/intro>
-   Parallel Computing<parallel/intro>
    Algorithm Efficency<algorithm/intro>
+   Parallel Computing<parallel/intro>
    Distributed Computing<distributed/intro>
    Xsede<xsede>

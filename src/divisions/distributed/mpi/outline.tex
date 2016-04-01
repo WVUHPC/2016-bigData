@@ -1,6 +1,6 @@
 
 \begin{frame}
-		\frametitle{Distributed Sort}
+		\frametitle{Parallel Sort}
 		\begin{figure}
 				\includegraphics[width=0.8\linewidth]{figures/diagrams/sort/parallelsort}
 		\end{figure}
@@ -14,57 +14,16 @@
 \end{frame}
 
 \begin{frame}
-		\frametitle{Distributed CLI}
-		mpirun - CLI mpi examples
-\end{frame}
-
-\begin{frame}[fragile]
-		\frametitle{Distributed Code}
-		\begin{verbatim}
-		library(pbdMPI)
-
-		init()
-		.comm.size <- comm.size()
-		.comm.rank <- comm.rank()
-
-		x <- 5
-
-		if (.comm.rank == 0) {
-		    send(x)
-		} else {
-		    y <- recv(x)
-		}
-
-		comm.print(y,rank.print=1)
-		finalize()
-		\end{verbatim}
-\end{frame}
-
-\begin{frame}[fragile]
-		\frametitle{Distributed Code}
-		\begin{verbatim}
-		init()
-		.comm.size <- comm.size()
-		.comm.rank <- comm.rank()
-
-		x <- sample(1:1000, 50, replace = T)
-
-		x_global <- 0
-		y <- sum(x)
-
-		x_global <- reduce(y, op="sum")
-
-		comm.print(x_global, rank.print==0)
-		finalize()
-		\end{verbatim}
+		\frametitle{Observed Speedup}
+			\begin{figure}
+					\includegraphics[width=0.5\linewidth]{figures/mpi/mpi}
+			\end{figure}
 \end{frame}
 
 \begin{frame}
 		\frametitle{Observed Speedup}
-			\begin{figure}
-					\includegraphics[width=0.65\linewidth]{figures/mpi/mpi}
-			\end{figure}
-\end{frame}
+			\Huge{\centerline{13.19x}}
+	\end{frame}
 
 \begin{frame}
 		\frametitle{Efficient Memory Use}

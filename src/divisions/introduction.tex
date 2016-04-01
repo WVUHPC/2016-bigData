@@ -3,38 +3,50 @@
 \section{Introduction}
 
 \begin{frame}
-		\frametitle{Problem Size/Compute Time Correlation}
+	\frametitle{Problem Size/Compute Time Correlation}
+		\begin{columns}[c] 
+
+			\column{.5\textwidth} % Left column and width
 			\begin{figure}
-					\includegraphics[width=0.65\linewidth]{figures/time/linpack}
+					\includegraphics[width=0.85\linewidth]{figures/time/laplace}
 			\end{figure}
+			\column{.5\textwidth} % Right column and width
+
+			\begin{figure}
+			\includegraphics[width=0.85\linewidth]{figures/memory/laplace}
+			\end{figure}
+		\end{columns}
 \end{frame}
 
 \begin{frame}
-		\frametitle{Problem Size/Compute Time Correlation}
-			\begin{figure}
-					\includegraphics[width=0.65\linewidth]{figures/time/laplace}
-			\end{figure}
-\end{frame}
+	\frametitle{Problem Size/Compute Time Correlation}
+		\begin{columns}[c] 
 
-\begin{frame}
-		\frametitle{Problem Size/Memory Correlation}
+			\column{.5\textwidth} % Left column and width
 			\begin{figure}
-					\includegraphics[width=0.65\linewidth]{figures/memory/linpack}
+					\includegraphics[width=0.85\linewidth]{figures/time/linpack}
 			\end{figure}
-\end{frame}
+			\column{.5\textwidth} % Right column and width
 
-\begin{frame}
-		\frametitle{Problem Size/Memory Correlation}
 			\begin{figure}
-			\includegraphics[width=0.65\linewidth]{figures/memory/laplace}
+			\includegraphics[width=0.85\linewidth]{figures/memory/linpack}
 			\end{figure}
+		\end{columns}
 \end{frame}
 
 \begin{frame}
 		\frametitle{Combinations}
-		\begin{itemize}
-				\item Compute time increases only
-				\item Memory usage increases only
-				\item Compute time and Memory increases
-		\end{itemize}
+
+\begin{table}
+\begin{tabular}{l l}
+\toprule
+\textbf{Limitation} & \textbf{Solution} \\
+\midrule
+Compute time only & Parallel Computing \\
+Memory only & Distributed Computing \\
+Compute time and Memory & Distributed Computing \\
+\bottomrule
+\end{tabular}
+\caption{Method needed given Limitation}
+\end{table}
 \end{frame}

@@ -2,43 +2,36 @@
 MPI code
 ==================
 
-A simple pbdMPI code example::
+Parallel distributed computing is always done through the Message Passing
+Interface (MPI).  `MPI <http://www.mcs.anl.gov/research/projects/mpi/>`_ is the 
+parallel computing standard.  As such, almost all distributed computing
+applications rely on MPI.
 
-    library ( pbdMPI )
+If your application requires the use of MPI, we strongly encourage that you
+should use C or fortran as an implementation.  However, we recognize that this
+requires a large learning curve associated with learning a lower level langauge
+like C.  Our thoughts are generally that if you require this amount of
+performance, other factors beside simply message passing is often required to
+make the application tenable.  
 
-    init ()
-    .comm.size <- comm.size ()
-    .comm.rank <- comm.rank ()
+MPI using R
+^^^^^^^^^^^^
 
-    N <- 5
-    x <- (1:N) + N * .comm.rank
+However, some smaller applications can get away with using R for MPI.  The
+`pbdMPI <https://cran.r-project.org/web/packages/pbdMPI/index.html>`_ package is
+currently the best MPI implementation in R.  However, the package is some what
+poorly documentated.  In that they expect some familiarity with the MPI
+standard to understand what their functions do.
 
-    if ( .comm.rank == 0 ) {
-        send ( x )
-    } else if ( .comm.rank == 1 ) {
-        y <- recv ( x )
-    }
+C/fortran MPI implementations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    comm.print ( y, rank.print = 1 )
+There are several implementations of the MPI standard for C and fortran.  They
+all offer mostly the same functionality, however, there are some 
+differences.  Largely, for most programmers they are interchangable. 
 
-    finalize ()
+* `openMPI <https://www.open-mpi.org/>`_
+* `MPICH <http://www.mpich.org/>`_
+* `MVAPICH <http://mvapich.cse.ohio-state.edu/>`_
 
-Explanation of this code set.
 
-Another MPI code example in R::
-
-    suppressMessages ( library ( pbdMPI, quietly = T ) )
-
-    init ()
-    .comm.size <- comm.size ()
-    .comm.rank <- comm.rank ()
-
-    x <- sample ( 1:1000, 50, replace = T )
-
-    x_global <- reduce ( y, op = "sum" )
-
-    comm.print ( x_global, rank.print == 0 )
-
-    finalize ()
-
-And this should be finished.

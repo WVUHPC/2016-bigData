@@ -3,7 +3,7 @@ Measuring Time
 ---------------
 
 A simple way to measure execution time of a program is to use the unix time
-program.::
+program::
 
     time sort input.txt
 

@@ -1,8 +1,8 @@
 
-What is "big Data"
+What is "Big Data"
 ==================
 
-"big Data" has numerous definitions - and it's variation of application is
+"Big Data" has numerous definitions - and there application is
 always tied to context.  There are added difficulties for just producing large
 data sets - specifially what techniques you will use.  Additionally,
 statistical tests and method applications often need to be modified when
@@ -12,9 +12,9 @@ which methods need to be used given their problem size.  This is almost always
 covered in their research training.  So none of these issues will be discussed
 in this manual.
 
-Here, we use a more practical approach to defining big Data.  Any data set that
+Here, we use a more practical approach to defining Big Data.  Any data set that
 exceeds practical computing time and/or memory limits of existing hardware is
-big Data.  And the threshold limits of these parameters ( time and memory ), is
+Big Data.  And the threshold limits of these parameters (time and memory), is
 also contextual.  If your existing workstation has only 8GB of RAM, any data
 set that uses more than 8GB will create difficulties for you to compute on it.
 Additionally, time is contextual as well.  A workflow might take 45 days to
@@ -25,11 +25,11 @@ days per instance will create an extreme burden to you.  If your wondering, it
 would take over 246 years if you did not adjust that compute time to run 2000
 instances back to back.
 
-Therefore, our practical definition of big Data is any data set that produces a
+Therefore, our practical definition of Big Data is any data set that produces a
 need to either reduce compute time, reduce memory usage, or both.  And
 depending on which needs you have, an appropriate solution emerges.
 
-.. csv-table:: Solution Set
+.. csv-table:: 
     :header: "Limitation", "Solution"
     
     time only, parallel computing

@@ -1,8 +1,6 @@
 
-Some title
+Big Data
 ===========
-
-.. title: Some title
 
 .. toctree::
     :maxdepth: 2

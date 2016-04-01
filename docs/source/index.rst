@@ -1,8 +1,10 @@
 
-.. title: Home
+Table of Contents
+=================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 0
+   :titlesonly:
 
    Introduction<intro>
    What is "big Data"<bigdata/intro>

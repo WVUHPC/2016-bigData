@@ -25,9 +25,16 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="top" title="Big Data wih HPC  documentation" href="../../index.html" />
     <link rel="up" title="Big Data" href="../intro.html" />
-    <link rel="next" title="Parallel Computing" href="../../parallel/intro.html" />
+    <link rel="next" title="Algorithm Efficiency" href="../../algorithm/intro.html" />
     <link rel="prev" title="Measuring Time" href="time.html" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-75853239-1']);
+	  _gaq.push(['_trackPageview']);
+</script>
+
   </head>
   <body role="document">
     <header id="pageheader"><h1><a href="../../index.html ">
@@ -41,7 +48,7 @@
           <a href="time.html" title="Previous document">Measuring Time</a>
         </li>
         <li>
-          <a href="../../parallel/intro.html" title="Next document">Parallel Computing</a>
+          <a href="../../algorithm/intro.html" title="Next document">Algorithm Efficiency</a>
           &rarr;
         </li>
     </ul>
@@ -76,7 +83,7 @@ control the output filename using the &#8216;&#8211;massif-out-file&#8217; optio
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">valgrind</span> <span class="o">--</span><span class="n">tool</span><span class="o">=</span><span class="n">massif</span> <span class="o">--</span><span class="n">massif</span><span class="o">-</span><span class="n">out</span><span class="o">-</span><span class="n">file</span><span class="o">=</span><span class="mi">1000</span><span class="o">-</span><span class="n">samples</span> <span class="n">sort</span> <span class="nb">input</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
-<p>One convienant approach is the name the outfiles with the input size.  This way
+<p>One convienant approach is to name the outfiles with the input size.  This way
 you can easily identify which files goes with which problem size.  To read the
 files, you use the &#8216;ms_print&#8217; tool, which is bundled with valgrind:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ms_print</span> <span class="mi">1000</span><span class="o">-</span><span class="n">samples</span>
@@ -99,7 +106,7 @@ output:</p>
 </pre></div>
 </div>
 <p>One of the snapshots will be labeled with &#8216;(peak)&#8217;.  In this case
-snapshot 1 is the peak snapshot.  Scroll down the the file and find the table
+snapshot 1 is the peak snapshot.  Scroll down the file and find the table
 that has the information for snapshot 1.  I see that the program used
 51,389,792 total bytes (B).  Which is about 49 MB of RAM.  Accuracy is not
 important, so you could just call this 51 MB of RAM (using 1000 as a conversion
@@ -127,8 +134,8 @@ memory usage, not obtain exact measurements.</p>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Measuring Memory</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../parallel/intro.html">Parallel Computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../algorithm/intro.html">Algorithm Efficency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel/intro.html">Parallel Computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../distributed/intro.html">Distributed Computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../xsede.html">Xsede</a></li>
 </ul>
@@ -145,7 +152,7 @@ memory usage, not obtain exact measurements.</p>
           <a href="time.html" title="Previous document">Measuring Time</a>
         </li>
         <li>
-          <a href="../../parallel/intro.html" title="Next document">Parallel Computing</a>
+          <a href="../../algorithm/intro.html" title="Next document">Algorithm Efficiency</a>
           &rarr;
         </li>
     </ul>
@@ -159,6 +166,7 @@ memory usage, not obtain exact measurements.</p>
     </ul>
   </nav>
   </div>
+
   <footer id="pagefooter">&copy; 2016, WVU Research Computing.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a>
       1.4
@@ -168,5 +176,21 @@ memory usage, not obtain exact measurements.</p>
   </footer>
 
   
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+				Google Analytics</a> to collect statistics. You can disable it
+		by blocking
+		the JavaScript coming from www.google-analytics.com.
+		<script type="text/javascript">
+  (function() {
+		      var ga = document.createElement('script');
+			      ga.src = ('https:' == document.location.protocol ?
+								                'https://ssl' : 'http://www') +
+						  '.google-analytics.com/ga.js';
+				      ga.setAttribute('async', 'true');
+					      document.documentElement.firstChild.appendChild(ga);
+						    })();
+		</script>
+</div>
+
   </body>
 </html>

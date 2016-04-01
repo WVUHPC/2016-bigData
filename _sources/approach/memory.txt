@@ -1,3 +1,0 @@
-
-Spread across hosts
-====

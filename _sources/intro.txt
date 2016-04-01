@@ -5,7 +5,7 @@ Introduction
 
 **Purpose** - December 2015, a university wide survey was sent out to
 inquire about research computing needs.  84% of survey
-participants indicated that have a direct need to be able to compute on "Big
+participants indicated they have a direct need to be able to compute on "Big
 Data".  However, only 23% also indicated they have a need for high performance
 computing systems.  How can this be possible?  
 

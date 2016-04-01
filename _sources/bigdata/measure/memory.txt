@@ -16,7 +16,7 @@ control the output filename using the '--massif-out-file' option::
 
     valgrind --tool=massif --massif-out-file=1000-samples sort input.txt
 
-One convienant approach is the name the outfiles with the input size.  This way
+One convienant approach is to name the outfiles with the input size.  This way
 you can easily identify which files goes with which problem size.  To read the
 files, you use the 'ms_print' tool, which is bundled with valgrind::
 
@@ -40,7 +40,7 @@ Here is some sections of the output::
        
 
 One of the snapshots will be labeled with '(peak)'.  In this case
-snapshot 1 is the peak snapshot.  Scroll down the the file and find the table
+snapshot 1 is the peak snapshot.  Scroll down the file and find the table
 that has the information for snapshot 1.  I see that the program used
 51,389,792 total bytes (B).  Which is about 49 MB of RAM.  Accuracy is not
 important, so you could just call this 51 MB of RAM (using 1000 as a conversion

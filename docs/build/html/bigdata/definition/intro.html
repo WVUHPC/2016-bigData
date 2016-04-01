@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>What is “Big Data” &mdash; Big Data wih HPC  documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/better.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Big Data wih HPC  documentation" href="../../index.html" />
+    <link rel="up" title="Big Data" href="../intro.html" />
+    <link rel="next" title="Measurements" href="../measure/intro.html" />
+    <link rel="prev" title="Big Data" href="../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head>
+  <body role="document">
+    <header id="pageheader"><h1><a href="../../index.html ">
+        Big Data wih HPC  documentation
+    </a></h1></header>
+  <div class="related top">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="../intro.html" title="Previous document">Big Data</a>
+        </li>
+        <li>
+          <a href="../measure/intro.html" title="Next document">Measurements</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../../index.html">Home</a></li>
+      <li>
+        <a href="../intro.html">Big Data</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="what-is-big-data">
+<h1>What is &#8220;Big Data&#8221;<a class="headerlink" href="#what-is-big-data" title="Permalink to this headline">¶</a></h1>
+<p>&#8220;Big Data&#8221; has numerous definitions - and there application is
+always tied to context.  There are added difficulties for just producing large
+data sets - specifially what techniques you will use.  Additionally,
+statistical tests and method applications often need to be modified when
+working with big Data.  However, these difficulties are research field
+dependent, and frankly, often researchers do not have difficulty figuring out
+which methods need to be used given their problem size.  This is almost always
+covered in their research training.  So none of these issues will be discussed
+in this manual.</p>
+<p>Here, we use a more practical approach to defining Big Data.  Any data set that
+exceeds practical computing time and/or memory limits of existing hardware is
+Big Data.  And the threshold limits of these parameters (time and memory), is
+also contextual.  If your existing workstation has only 8GB of RAM, any data
+set that uses more than 8GB will create difficulties for you to compute on it.
+Additionally, time is contextual as well.  A workflow might take 45 days to
+compute.  But if you are doing this only once, you might easily be able to deal
+wih this time constraint (work on another project in the meantime for
+instance).  However, if you need to run this same workflow 2000 times, now 45
+days per instance will create an extreme burden to you.  If your wondering, it
+would take over 246 years if you did not adjust that compute time to run 2000
+instances back to back.</p>
+<p>Therefore, our practical definition of Big Data is any data set that produces a
+need to either reduce compute time, reduce memory usage, or both.  And
+depending on which needs you have, an appropriate solution emerges.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Limitation</th>
+<th class="head">Solution</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>time only</td>
+<td>parallel computing</td>
+</tr>
+<tr class="row-odd"><td>memory only</td>
+<td>distributed computing</td>
+</tr>
+<tr class="row-even"><td>time and memory</td>
+<td>distributed computing</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../intro.html">What is &#8220;big Data&#8221;</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">What is &#8220;Big Data&#8221;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../measure/intro.html">Measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../measure/time.html">Measuring Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../measure/memory.html">Measuring Memory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/intro.html">Algorithm Efficency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel/intro.html">Parallel Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../distributed/intro.html">Distributed Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xsede.html">Xsede</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="../intro.html" title="Previous document">Big Data</a>
+        </li>
+        <li>
+          <a href="../measure/intro.html" title="Next document">Measurements</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../../index.html">Home</a></li>
+      <li>
+        <a href="../intro.html">Big Data</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>
+  <footer id="pagefooter">&copy; 2016, WVU Research Computing.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a>
+      1.4
+        with the <a href="http://github.com/irskep/sphinx-better-theme">
+          better</a> theme.
+
+  </footer>
+
+  
+  </body>
+</html>

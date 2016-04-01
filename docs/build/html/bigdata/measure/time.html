@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Measuring Time &mdash; Big Data wih HPC  documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/better.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Big Data wih HPC  documentation" href="../../index.html" />
+    <link rel="up" title="Big Data" href="../intro.html" />
+    <link rel="next" title="Measuring Memory" href="memory.html" />
+    <link rel="prev" title="Measurements" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head>
+  <body role="document">
+    <header id="pageheader"><h1><a href="../../index.html ">
+        Big Data wih HPC  documentation
+    </a></h1></header>
+  <div class="related top">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="intro.html" title="Previous document">Measurements</a>
+        </li>
+        <li>
+          <a href="memory.html" title="Next document">Measuring Memory</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../../index.html">Home</a></li>
+      <li>
+        <a href="../intro.html">Big Data</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="measuring-time">
+<h1>Measuring Time<a class="headerlink" href="#measuring-time" title="Permalink to this headline">¶</a></h1>
+<p>A simple way to measure execution time of a program is to use the unix time
+program:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="n">sort</span> <span class="nb">input</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>The output will give three times labeled, real, system and user.  We are
+interested in the real time, since this represents execution time from start to
+finish.</p>
+<p>Since the goal here is to produce a standard graph, you are going to want to
+&#8216;time&#8217; your program/code with different input sizes.  Breaking up the input to
+appropriate sizes is completely application dependent, and largely depends on
+the type of input.  Your input might be a million samples, and therefore you
+could &#8216;time&#8217; program exeuction on 1000, 10000, 25000, 50000, and 100000
+samples.  The goal here is to simply see how execution time responds to
+different input sizes, so you don&#8217;t need to scale your samples very high.  But
+you do want to get at least 4 points, and have them spaced to create a clear
+graph.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../intro.html">What is &#8220;big Data&#8221;</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../definition/intro.html">What is &#8220;Big Data&#8221;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Measurements</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Measuring Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="memory.html">Measuring Memory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/intro.html">Algorithm Efficency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel/intro.html">Parallel Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../distributed/intro.html">Distributed Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xsede.html">Xsede</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="intro.html" title="Previous document">Measurements</a>
+        </li>
+        <li>
+          <a href="memory.html" title="Next document">Measuring Memory</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../../index.html">Home</a></li>
+      <li>
+        <a href="../intro.html">Big Data</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>
+  <footer id="pagefooter">&copy; 2016, WVU Research Computing.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a>
+      1.4
+        with the <a href="http://github.com/irskep/sphinx-better-theme">
+          better</a> theme.
+
+  </footer>
+
+  
+  </body>
+</html>

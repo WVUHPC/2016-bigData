@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Measurements &mdash; Big Data wih HPC  documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/better.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Big Data wih HPC  documentation" href="../../index.html" />
+    <link rel="up" title="Big Data" href="../intro.html" />
+    <link rel="next" title="Measuring Time" href="time.html" />
+    <link rel="prev" title="What is “Big Data”" href="../definition/intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head>
+  <body role="document">
+    <header id="pageheader"><h1><a href="../../index.html ">
+        Big Data wih HPC  documentation
+    </a></h1></header>
+  <div class="related top">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="../definition/intro.html" title="Previous document">What is &#8220;Big Data&#8221;</a>
+        </li>
+        <li>
+          <a href="time.html" title="Next document">Measuring Time</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../../index.html">Home</a></li>
+      <li>
+        <a href="../intro.html">Big Data</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="measurements">
+<h1>Measurements<a class="headerlink" href="#measurements" title="Permalink to this headline">¶</a></h1>
+<p><strong>Goal</strong> - To empirically determine which limitations need to be addressed.</p>
+<div class="section" id="problem-size-compute-time-correlation">
+<h2>Problem Size/Compute time Correlation<a class="headerlink" href="#problem-size-compute-time-correlation" title="Permalink to this headline">¶</a></h2>
+<p>With all computing applications, as your input size increases the time it takes
+to run the program will also increase.  This will always happen, however
+depending on the complexity of the algorithm, the magnitude of the time
+increases will be different, and needs to be measured.  Additionally, most
+programs will increase their memory use as the problem size increases.
+However, some programs will produce drastic changes in memory use with only
+small problem size increments.  Other programs may seemingly handle any
+problem size and not increase memory usage at all.  A quick and dirty way to
+measure this is to run the application with varying problem sizes, and measure
+the execution time and memory usage.  Essentially, creating a standard curve
+for these two parameters - quickly letting you know what limitations you will
+encounter when you scale this application to large data sets.</p>
+<a class="reference internal image-reference" href="../../_images/laplace.png"><img alt="../../_images/laplace.png" src="../../_images/laplace.png" style="width: 240.0px; height: 240.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/laplace1.png"><img alt="../../_images/laplace1.png" src="../../_images/laplace1.png" style="width: 240.0px; height: 240.0px;" /></a>
+<p>The above data points show an application that has essentially a linear time
+increase with problem size, but the memory usage is not an issue.  Each tick
+mark represents 16GB of memory.  The memory footprint, even at large problem
+sizes almost never exceds 1.5GB.  However, the compute time still needs to be
+reduced for large problems to be attenable.  This would be an application that
+would benefit from parallel computing.</p>
+<a class="reference internal image-reference" href="../../_images/linpack.png"><img alt="../../_images/linpack.png" src="../../_images/linpack.png" style="width: 240.0px; height: 240.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/linpack1.png"><img alt="../../_images/linpack1.png" src="../../_images/linpack1.png" style="width: 240.0px; height: 240.0px;" /></a>
+<p>Our second example shows an application that also has a linear compute time
+increase.  However, the memory usage is also an issue.  In fact, even at modest
+problem sizes, the memory usage is above 64GB of RAM - larger than most
+standard servers; and certainly above workstations available memory.
+This application needs to both address compute time and memory usage, thus
+distributed computing would be the selected method.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../intro.html">What is &#8220;big Data&#8221;</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../definition/intro.html">What is &#8220;Big Data&#8221;</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Measurements</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="time.html">Measuring Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="memory.html">Measuring Memory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/intro.html">Algorithm Efficency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel/intro.html">Parallel Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../distributed/intro.html">Distributed Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xsede.html">Xsede</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="../definition/intro.html" title="Previous document">What is &#8220;Big Data&#8221;</a>
+        </li>
+        <li>
+          <a href="time.html" title="Next document">Measuring Time</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../../index.html">Home</a></li>
+      <li>
+        <a href="../intro.html">Big Data</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>
+  <footer id="pagefooter">&copy; 2016, WVU Research Computing.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a>
+      1.4
+        with the <a href="http://github.com/irskep/sphinx-better-theme">
+          better</a> theme.
+
+  </footer>
+
+  
+  </body>
+</html>

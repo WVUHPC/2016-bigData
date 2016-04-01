@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Parallel CLI &mdash; Big Data wih HPC  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/better.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="Big Data wih HPC  documentation" href="../../../index.html" />
+    <link rel="up" title="Parallel Computing" href="../../intro.html" />
+    <link rel="next" title="Parallel Code" href="../code/intro.html" />
+    <link rel="prev" title="Overview" href="../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head>
+  <body role="document">
+    <header id="pageheader"><h1><a href="../../../index.html ">
+        Big Data wih HPC  documentation
+    </a></h1></header>
+  <div class="related top">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="../intro.html" title="Previous document">Overview</a>
+        </li>
+        <li>
+          <a href="../code/intro.html" title="Next document">Parallel Code</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../../../index.html">Home</a></li>
+      <li>
+        <a href="../../intro.html">Parallel Computing</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="parallel-cli">
+<h1>Parallel CLI<a class="headerlink" href="#parallel-cli" title="Permalink to this headline">¶</a></h1>
+<p>If you are using an existing third party application to process your data, you
+might already have parallel computing available to you.  You would have to
+specify it on the command-line.  The most common forms of the &#8216;-p&#8217;, &#8216;-np&#8217;, or
+&#8216;&#8211;parallel&#8217; options.  These options are almost always followed by a number
+indicating a processor count:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sort</span> <span class="o">--</span><span class="n">parallel</span> <span class="mi">8</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>Another example might be:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">bowtie2</span> <span class="o">-</span><span class="n">p</span> <span class="mi">4</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>Some applications, however, allows parallel computing but does not require
+specification of processors on the command-line.  They are controlled by an
+environment variable &#8216;OMP_NUM_THREADS&#8217;.  These applications are utilizing the
+openMP library - and it is a very common paradigm to add parallel computing to
+applications:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">OMP_NUM_THREADS</span><span class="o">=</span><span class="mi">8</span>
+</pre></div>
+</div>
+<p>Gromacs, a popular molecular dynamic program, is controlled this way.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Check the documenation of your application, specifically looking for
+sections outlining parallel computing.  It&#8217;s important to be able to
+recognize what type of parallel computing your application offers.  If your
+program uses OMP_NUM_THREADS, or uses -p, -np, etc... to specify processor
+number - then it almost certainly uses shared parallel computing.  And
+therefore, it will not be adequate to alleviate memory usage limitations.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../../index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bigdata/intro.html">What is &#8220;big Data&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../algorithm/intro.html">Algorithm Efficency</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../intro.html">Parallel Computing</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../intro.html">Overview</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Parallel CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/intro.html">Parallel Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../observed/intro.html">Performance Gains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../observed/amdahl.html">Amdahl&#8217;s law</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../observed/overhead.html">Parallel Overhead</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../distributed/intro.html">Distributed Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../xsede.html">Xsede</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="../intro.html" title="Previous document">Overview</a>
+        </li>
+        <li>
+          <a href="../code/intro.html" title="Next document">Parallel Code</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../../../index.html">Home</a></li>
+      <li>
+        <a href="../../intro.html">Parallel Computing</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>
+  <footer id="pagefooter">&copy; 2016, WVU Research Computing.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a>
+      1.4
+        with the <a href="http://github.com/irskep/sphinx-better-theme">
+          better</a> theme.
+
+  </footer>
+
+  
+  </body>
+</html>

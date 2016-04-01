@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Performance &mdash; Big Data wih HPC  documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/better.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Big Data wih HPC  documentation" href="../../index.html" />
+    <link rel="up" title="Distributed Computing" href="../intro.html" />
+    <link rel="next" title="Comparison" href="comparison.html" />
+    <link rel="prev" title="MPI code" href="code.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head>
+  <body role="document">
+    <header id="pageheader"><h1><a href="../../index.html ">
+        Big Data wih HPC  documentation
+    </a></h1></header>
+  <div class="related top">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="code.html" title="Previous document">MPI code</a>
+        </li>
+        <li>
+          <a href="comparison.html" title="Next document">Comparison</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../../index.html">Home</a></li>
+      <li>
+        <a href="../intro.html">Distributed Computing</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="performance">
+<h1>Performance<a class="headerlink" href="#performance" title="Permalink to this headline">¶</a></h1>
+<p>MPI based applications have two performance metrics, time performance and
+memory performance.</p>
+<div class="section" id="time-performance">
+<h2>Time Performance<a class="headerlink" href="#time-performance" title="Permalink to this headline">¶</a></h2>
+<p>Time performance is identical to any parallel computing.</p>
+<a class="reference internal image-reference" href="../../_images/mpi.png"><img alt="../../_images/mpi.png" class="align-center" src="../../_images/mpi.png" style="width: 240.0px; height: 240.0px;" /></a>
+<p>As observed the performance is strikingly similar to shared memory parallel
+methods.  MPI, like all parallel computing methods, is still constrained by
+Amdahl&#8217;s law and parallel overhead costs.  For most applications, performance
+will be very similar between both techniques.</p>
+</div>
+<div class="section" id="memory-performance">
+<h2>Memory Performance<a class="headerlink" href="#memory-performance" title="Permalink to this headline">¶</a></h2>
+<p>All parallel computing applications have memory performance, which is measured
+by how well balanced the problem is across processors.  However, unbalanced
+problem distribution in shared memory parallel computing is not as significant,
+since these applications tend to be non-memory intensive anyways.  With memory
+intensive MPI applications, memory needs to be properly balanced across
+processors to ensure that one processor will not run into RAM limitations.</p>
+<a class="reference internal image-reference" href="../../_images/memsplit.png"><img alt="../../_images/memsplit.png" class="align-center" src="../../_images/memsplit.png" style="width: 455.0px; height: 303.0px;" /></a>
+<p>If our application uses 200GB of RAM, and we only have 32GB of RAM available to
+each server.  We need to ensure that 25GB of RAM is distributed to each
+processor on 8 distinct servers.  If our problem is not balanced, we would crash
+one server, and thus crash our entire program.  You never actually have to
+measure this metric, simply be aware that as your write MPI programs, you need
+to write them in such a way that they balance the problem correctly among
+processors.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bigdata/intro.html">What is &#8220;big Data&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel/intro.html">Parallel Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/intro.html">Algorithm Efficency</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../intro.html">Distributed Computing</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Distributed Sort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mpirun.html">MPIRUN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html">MPI code</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Performance</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="comparison.html">Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="infrastructure.html">Infrastructure</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../xsede.html">Xsede</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="code.html" title="Previous document">MPI code</a>
+        </li>
+        <li>
+          <a href="comparison.html" title="Next document">Comparison</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../../index.html">Home</a></li>
+      <li>
+        <a href="../intro.html">Distributed Computing</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>
+  <footer id="pagefooter">&copy; 2016, WVU Research Computing.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a>
+      1.4
+        with the <a href="http://github.com/irskep/sphinx-better-theme">
+          better</a> theme.
+
+  </footer>
+
+  
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Distributed Sort &mdash; Big Data wih HPC  documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/better.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Big Data wih HPC  documentation" href="../../index.html" />
+    <link rel="up" title="Distributed Computing" href="../intro.html" />
+    <link rel="next" title="MPIRUN" href="mpirun.html" />
+    <link rel="prev" title="Distributed Computing" href="../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head>
+  <body role="document">
+    <header id="pageheader"><h1><a href="../../index.html ">
+        Big Data wih HPC  documentation
+    </a></h1></header>
+  <div class="related top">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="../intro.html" title="Previous document">Distributed Computing</a>
+        </li>
+        <li>
+          <a href="mpirun.html" title="Next document">MPIRUN</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../../index.html">Home</a></li>
+      <li>
+        <a href="../intro.html">Distributed Computing</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="distributed-sort">
+<h1>Distributed Sort<a class="headerlink" href="#distributed-sort" title="Permalink to this headline">¶</a></h1>
+<p>Distributed and parallel algorithms are conceptually identical.  The only
+difference is the interface used to share data between processors.  In
+distributed computing we use a network, while shared memory parallel computing
+uses pipes or semaphores.  This difference changes the libraries you will use,
+but the concepts are the same.</p>
+<a class="reference internal image-reference" href="../../_images/parallelsort.png"><img alt="../../_images/parallelsort.png" class="align-center" src="../../_images/parallelsort.png" style="width: 450.0px; height: 318.0px;" /></a>
+<p>Above is the parallel sort algorithm shown earlier.  The distributed algorithm
+is identical.  Except that we indicate that each
+processor resides on a separate computer.</p>
+<a class="reference internal image-reference" href="../../_images/distributedsort.png"><img alt="../../_images/distributedsort.png" class="align-center" src="../../_images/distributedsort.png" style="width: 353.0px; height: 294.5px;" /></a>
+<p>At this point terminology starts to get fuzzy.  Both methods are technically
+parallel computing - which is any computing method that utilizes multiple
+processors.  But distributed computing specifically involves networked
+communication between system parts.  Technically speaking, not all distributed
+systems are parallel, but all parallel systems that use multiple computers are
+distributed.  In practice, we only use the differing terms here to distinguish
+the different methods.  Distributed computing can alleviate large memory
+limitations, while shared memory parallel computing can not.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bigdata/intro.html">What is &#8220;big Data&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel/intro.html">Parallel Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/intro.html">Algorithm Efficency</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../intro.html">Distributed Computing</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Distributed Sort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mpirun.html">MPIRUN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html">MPI code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparison.html">Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="infrastructure.html">Infrastructure</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../xsede.html">Xsede</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="../intro.html" title="Previous document">Distributed Computing</a>
+        </li>
+        <li>
+          <a href="mpirun.html" title="Next document">MPIRUN</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../../index.html">Home</a></li>
+      <li>
+        <a href="../intro.html">Distributed Computing</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>
+  <footer id="pagefooter">&copy; 2016, WVU Research Computing.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a>
+      1.4
+        with the <a href="http://github.com/irskep/sphinx-better-theme">
+          better</a> theme.
+
+  </footer>
+
+  
+  </body>
+</html>

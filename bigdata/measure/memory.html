@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Measuring Memory &mdash; Big Data wih HPC  documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/better.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Big Data wih HPC  documentation" href="../../index.html" />
+    <link rel="up" title="Big Data" href="../intro.html" />
+    <link rel="next" title="Parallel Computing" href="../../parallel/intro.html" />
+    <link rel="prev" title="Measuring Time" href="time.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head>
+  <body role="document">
+    <header id="pageheader"><h1><a href="../../index.html ">
+        Big Data wih HPC  documentation
+    </a></h1></header>
+  <div class="related top">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="time.html" title="Previous document">Measuring Time</a>
+        </li>
+        <li>
+          <a href="../../parallel/intro.html" title="Next document">Parallel Computing</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../../index.html">Home</a></li>
+      <li>
+        <a href="../intro.html">Big Data</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="measuring-memory">
+<h1>Measuring Memory<a class="headerlink" href="#measuring-memory" title="Permalink to this headline">¶</a></h1>
+<p>The de facto standard for measuring memory is using the linux tool <a class="reference external" href="http://valgrind.org/">valgrind</a>.  Valgrind comes with many different options and tools
+that are useful to coders.  But for memory usage discovery, we want to use the
+&#8216;<a class="reference external" href="http://valgrind.org/docs/manual/ms-manual.html">massif</a>&#8216; tool:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">valgrind</span> <span class="o">--</span><span class="n">tool</span><span class="o">=</span><span class="n">massif</span> <span class="n">sort</span> <span class="nb">input</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Valgrind will take snapshots of memory usage of your program/code.  When the
+execution of the program is finished, a file in the format of
+&#8216;massif.out.99999&#8217; will be in the directory valgrind was started from.  You can
+control the output filename using the &#8216;&#8211;massif-out-file&#8217; option:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">valgrind</span> <span class="o">--</span><span class="n">tool</span><span class="o">=</span><span class="n">massif</span> <span class="o">--</span><span class="n">massif</span><span class="o">-</span><span class="n">out</span><span class="o">-</span><span class="n">file</span><span class="o">=</span><span class="mi">1000</span><span class="o">-</span><span class="n">samples</span> <span class="n">sort</span> <span class="nb">input</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>One convienant approach is the name the outfiles with the input size.  This way
+you can easily identify which files goes with which problem size.  To read the
+files, you use the &#8216;ms_print&#8217; tool, which is bundled with valgrind:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ms_print</span> <span class="mi">1000</span><span class="o">-</span><span class="n">samples</span>
+</pre></div>
+</div>
+<p>ms_print will output a lot of text.  The most useful part of the file, is the
+&#8216;Detailed snapshots&#8217; line, which occurs usually within the first 25 lines of
+output:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ms_print</span> <span class="n">massif</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="mi">34625</span> <span class="o">|</span> <span class="n">less</span>
+</pre></div>
+</div>
+<p>Here is some sections of the output:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Detailed</span> <span class="n">snapshots</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span> <span class="p">(</span><span class="n">peak</span><span class="p">),</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">43</span><span class="p">]</span>
+
+<span class="o">--------------------------------------------------------------------------------</span>
+<span class="n">n</span>        <span class="n">time</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>         <span class="n">total</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>   <span class="n">useful</span><span class="o">-</span><span class="n">heap</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="n">extra</span><span class="o">-</span><span class="n">heap</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="n">stacks</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+<span class="o">--------------------------------------------------------------------------------</span>
+ <span class="mi">0</span>              <span class="mi">0</span>                <span class="mi">0</span>                <span class="mi">0</span>             <span class="mi">0</span> <span class="mi">0</span>
+ <span class="mi">1</span> <span class="mi">10</span><span class="p">,</span><span class="mi">916</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">628</span>       <span class="mi">51</span><span class="p">,</span><span class="mi">389</span><span class="p">,</span><span class="mi">792</span>       <span class="mi">51</span><span class="p">,</span><span class="mi">385</span><span class="p">,</span><span class="mi">123</span>         <span class="mi">4</span><span class="p">,</span><span class="mi">669</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>One of the snapshots will be labeled with &#8216;(peak)&#8217;.  In this case
+snapshot 1 is the peak snapshot.  Scroll down the the file and find the table
+that has the information for snapshot 1.  I see that the program used
+51,389,792 total bytes (B).  Which is about 49 MB of RAM.  Accuracy is not
+important, so you could just call this 51 MB of RAM (using 1000 as a conversion
+instead of the proper 1024).  The goal is to observe the general trend in
+memory usage, not obtain exact measurements.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Do not run valgrind and time in the same command.  valgrind seriously slows down a programs execution time, and will therefore skew the data.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../intro.html">What is &#8220;big Data&#8221;</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../definition/intro.html">What is &#8220;Big Data&#8221;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time.html">Measuring Time</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Measuring Memory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel/intro.html">Parallel Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/intro.html">Algorithm Efficency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../distributed/intro.html">Distributed Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xsede.html">Xsede</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="time.html" title="Previous document">Measuring Time</a>
+        </li>
+        <li>
+          <a href="../../parallel/intro.html" title="Next document">Parallel Computing</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../../index.html">Home</a></li>
+      <li>
+        <a href="../intro.html">Big Data</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>
+  <footer id="pagefooter">&copy; 2016, WVU Research Computing.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a>
+      1.4
+        with the <a href="http://github.com/irskep/sphinx-better-theme">
+          better</a> theme.
+
+  </footer>
+
+  
+  </body>
+</html>

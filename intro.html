@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Limitiations created by bigData &mdash; bigData 0 documentation</title>
+    <title>Introduction &mdash; Big Data wih HPC  documentation</title>
     
     <link rel="stylesheet" href="_static/better.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0',
+        VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,21 +23,31 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="bigData 0 documentation" href="index.html" />
+    <link rel="top" title="Big Data wih HPC  documentation" href="index.html" />
+    <link rel="next" title="Big Data" href="bigdata/intro.html" />
+    <link rel="prev" title="Table of Contents" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   </head>
   <body role="document">
     <header id="pageheader"><h1><a href="index.html ">
-        bigData 0 documentation
+        Big Data wih HPC  documentation
     </a></h1></header>
   <div class="related top">
   <nav id="rellinks">
     <ul>
+        <li>
+          &larr;
+          <a href="index.html" title="Previous document">Table of Contents</a>
+        </li>
+        <li>
+          <a href="bigdata/intro.html" title="Next document">Big Data</a>
+          &rarr;
+        </li>
     </ul>
   </nav>
   <nav id="breadcrumbs">
     <ul>
-      <li><a href="index.html">bigData 0 documentation</a></li> 
+      <li><a href="index.html">Home</a></li> 
     </ul>
   </nav>
   </div>  
@@ -47,8 +57,35 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="limitiations-created-by-bigdata">
-<h1>Limitiations created by bigData<a class="headerlink" href="#limitiations-created-by-bigdata" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p><strong>Purpose</strong> - December 2015, a university wide survey was sent out to
+inquire about research computing needs.  84% of survey
+participants indicated that have a direct need to be able to compute on &#8220;Big
+Data&#8221;.  However, only 23% also indicated they have a need for high performance
+computing systems.  How can this be possible?</p>
+<p>How do you compute on data sets
+that by definition push memory and compute time limits, and not solve this
+through performance computing?  This is when we realized that there is a large
+disconnect between what big Data is and how high performance computing can
+alleviate these limitations.  This manual was created with the sole purpose of
+bridging big Data needs to HPC infrastructures within the scientific computing
+field.  In this manual, we outline a process to simplify your computing needs
+to one of three choices.  Given that choice, we
+outline the chosen solution.  We are not going to re-invent the wheel here, so
+besides very large overviews of the given techniques, we direct users to the
+appropriate documentation elsewhere.  Our goal is for you to be able to read
+this manual in a single 30 minute time window, and understand exactly where to
+find resources to implement needed solutions.</p>
+<p><strong>Audience</strong> - Any researcher that computes on data sets that impose burdens that
+slow down the research.  This can either be due to the long compute time needed
+to complete the tasks, or due to memory limitations of existing hardware.</p>
+<p><strong>Pre-requisites</strong> - There is no skillset needed to read through this manual.
+However, it will make much more sense, and be exponentially more useful if you
+have some familiarity with linux command-line and some programming experience.
+Specifically, we wrote this manual for researchers that are already performing
+research computing, and need to know how to overcome a specific limitation as
+they scale their workflows to large problem sizes.</p>
 </div>
 
 
@@ -57,20 +94,16 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/intro.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<form class="search" action="search.html" method="get">
-  <input type="text" name="q"
-   placeholder="type to search" />
-  <input type="hidden" name="check_keywords" value="yes" />
-  <input type="hidden" name="area" value="default" />
-</form>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bigdata/intro.html">What is &#8220;big Data&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parallel/intro.html">Parallel Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithm/intro.html">Algorithm Efficency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distributed/intro.html">Distributed Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xsede.html">Xsede</a></li>
+</ul>
+
         </div>
       </div>
       <div class="clearer"></div>
@@ -78,17 +111,25 @@
   <div class="related bottom">
   <nav id="rellinks">
     <ul>
+        <li>
+          &larr;
+          <a href="index.html" title="Previous document">Table of Contents</a>
+        </li>
+        <li>
+          <a href="bigdata/intro.html" title="Next document">Big Data</a>
+          &rarr;
+        </li>
     </ul>
   </nav>
   <nav id="breadcrumbs">
     <ul>
-      <li><a href="index.html">bigData 0 documentation</a></li> 
+      <li><a href="index.html">Home</a></li> 
     </ul>
   </nav>
   </div>
   <footer id="pagefooter">&copy; 2016, WVU Research Computing.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a>
-      1.3.6
+      1.4
         with the <a href="http://github.com/irskep/sphinx-better-theme">
           better</a> theme.
 

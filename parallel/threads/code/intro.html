@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Parallel Code &mdash; Big Data wih HPC  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/better.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="Big Data wih HPC  documentation" href="../../../index.html" />
+    <link rel="up" title="Parallel Computing" href="../../intro.html" />
+    <link rel="next" title="Performance Gains" href="../observed/intro.html" />
+    <link rel="prev" title="Parallel CLI" href="../CLI/intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head>
+  <body role="document">
+    <header id="pageheader"><h1><a href="../../../index.html ">
+        Big Data wih HPC  documentation
+    </a></h1></header>
+  <div class="related top">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="../CLI/intro.html" title="Previous document">Parallel CLI</a>
+        </li>
+        <li>
+          <a href="../observed/intro.html" title="Next document">Performance Gains</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../../../index.html">Home</a></li>
+      <li>
+        <a href="../../intro.html">Parallel Computing</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="parallel-code">
+<h1>Parallel Code<a class="headerlink" href="#parallel-code" title="Permalink to this headline">¶</a></h1>
+<p>When applying parallel computing to your own code.  The easiest method is to
+use packages available for your language of choice.  Most languages have
+packages that practically automate parallel computing, especially around for
+loops.  An example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">library</span> <span class="p">(</span><span class="n">doParallel</span><span class="p">)</span>
+<span class="n">cl</span> <span class="o">&lt;-</span> <span class="n">makeCluster</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">registerDoParallel</span> <span class="p">(</span><span class="n">cl</span><span class="p">)</span>
+
+<span class="n">foreach</span> <span class="p">(</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span> <span class="p">)</span> <span class="o">%</span><span class="n">dopar</span><span class="o">%</span> <span class="n">sqrt</span> <span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is in the R language, and uses the doParallel package, which is an
+extension of the parallel package which comes shipped with R.  R has built-in
+functions that can parallelize any of the apply functions and foreach loops,
+which are large sources of time limits.</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://cran.r-project.org/web/packages/doParallel/vignettes/gettingstartedParallel.pdf">Getting started with doParallel</a></li>
+<li><a class="reference external" href="http://stat.ethz.ch/R-manual/R-devel/library/parallel/doc/parallel.pdf">Parallel package</a></li>
+</ul>
+</div></blockquote>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The parallel package should not be used for distributed computing.
+While some examples exist where you can put processors on different
+servers, the package does not employ a true SSMD (single source multiple
+data) paradigm.  Which means the parallel package will not provide
+solutions to memory limitations.</p>
+</div>
+<div class="section" id="python-modules">
+<h2>Python modules<a class="headerlink" href="#python-modules" title="Permalink to this headline">¶</a></h2>
+<p>Python has some built-in ability to perform parallel computing using the
+<a class="reference external" href="https://docs.python.org/3/library/multiprocessing.html">multiprocessing</a>
+module.  However, due to a &#8216;Global lock interpreter&#8217; python&#8217;s parallel
+computing capacity is limited.  Nonetheless, multiprocessing module can provide
+parallel computing surrounding simple parallel tasks (for loops, for instance).</p>
+</div>
+<div class="section" id="c-fortran">
+<h2>C/Fortran<a class="headerlink" href="#c-fortran" title="Permalink to this headline">¶</a></h2>
+<p>C and Fortran users should use <a class="reference external" href="http://openmp.org/wp/">openMP</a> which has
+greatly simplified the interface for parallel programming.  Tutorials are
+offered on their <a class="reference external" href="http://openmp.org/wp/resources/#Tutorials">resource</a> page.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../../index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bigdata/intro.html">What is &#8220;big Data&#8221;</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../intro.html">Parallel Computing</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../intro.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CLI/intro.html">Parallel CLI</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Parallel Code</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../observed/intro.html">Performance Gains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../observed/amdahl.html">Amdahl&#8217;s law</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../observed/overhead.html">Parallel Overhead</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../algorithm/intro.html">Algorithm Efficency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../distributed/intro.html">Distributed Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../xsede.html">Xsede</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="../CLI/intro.html" title="Previous document">Parallel CLI</a>
+        </li>
+        <li>
+          <a href="../observed/intro.html" title="Next document">Performance Gains</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../../../index.html">Home</a></li>
+      <li>
+        <a href="../../intro.html">Parallel Computing</a>
+      </li> 
+    </ul>
+  </nav>
+  </div>
+  <footer id="pagefooter">&copy; 2016, WVU Research Computing.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a>
+      1.4
+        with the <a href="http://github.com/irskep/sphinx-better-theme">
+          better</a> theme.
+
+  </footer>
+
+  
+  </body>
+</html>

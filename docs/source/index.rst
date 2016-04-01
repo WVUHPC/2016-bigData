@@ -1,16 +1,14 @@
-.. bigData documentation master file, created by
-   sphinx-quickstart on Fri Mar 18 17:19:51 2016.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
 
-Contents:
+Table of Contents
+=================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 0
+   :titlesonly:
 
-    intro
-    limits/start
-    approach/start
-    practice/start
-    xsede/start
-
+   Introduction<intro>
+   What is "big Data"<bigdata/intro>
+   Parallel Computing<parallel/intro>
+   Algorithm Efficency<algorithm/intro>
+   Distributed Computing<distributed/intro>
+   Xsede<xsede>

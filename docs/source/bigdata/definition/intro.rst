@@ -6,7 +6,7 @@ What is "Big Data"
 always tied to context.  There are added difficulties for just producing large
 data sets - specifially what techniques you will use.  Additionally,
 statistical tests and method applications often need to be modified when
-working with big Data.  However, these difficulties are research field
+working with Big Data.  However, these difficulties are research field
 dependent, and frankly, often researchers do not have difficulty figuring out
 which methods need to be used given their problem size.  This is almost always
 covered in their research training.  So none of these issues will be discussed

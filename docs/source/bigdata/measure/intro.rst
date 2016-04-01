@@ -8,8 +8,8 @@ Measurements
 Problem Size/Compute time Correlation
 -------------------------------------
 
-With all computing applications, as your input size increases the time it takes
-to run the program will also increase.  This will always happen, however
+With all computing applications, as your input size increases the execution 
+time will also increase.  This will always happen, however
 depending on the complexity of the algorithm, the magnitude of the time
 increases will be different, and needs to be measured.  Additionally, most
 programs will increase their memory use as the problem size increases.
